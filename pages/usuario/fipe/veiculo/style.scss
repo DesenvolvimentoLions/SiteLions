@@ -1,0 +1,113 @@
+@use "../../../../src/assets/variaveisCss/index" as *;
+
+section.containerFipeDadosVeiculo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 1rem;
+
+    section.tamanhoPadrao {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        section.tituloVeicular {
+            h1 {
+                color: #fff;
+                text-align: center;
+                font-weight: $fontBold700;
+                line-height: 1.7rem;
+                font-size: 1.5rem;
+            }
+        }
+
+        i {
+            color: #898989;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        section.containerValoresAtuais {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            div.containerGeral {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                width: 100%;
+                max-width: 800px;
+                margin-top: 1rem;
+
+                div.containerValorAtual {
+                    padding-inline: 1rem;
+                    margin-bottom: 1rem;
+
+                    h5 {
+                        color: #fff;
+                        font-weight: $fontBold700;
+                        margin-bottom: 0.2rem;
+                    }
+                    p {
+                        color: #fff;
+                    }
+                }
+
+                div.containerValoresMedios,
+                div.porcentagemContainer {
+                    padding-inline: 1rem;
+                    border-left: 1px solid #7c7c7c;
+                    margin-bottom: 1rem;
+
+                    strong {
+                        color: #fff;
+                        font-weight: $fontBold700;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.2rem;
+                    }
+                }
+
+                div.porcentagemContainer {
+                    border: none;
+                    text-align: center;
+
+                    .porcentagem {
+                        &.desvalorizacao {
+                            color: $vermelho;
+                        }
+                        &.valorizacao {
+                            color: #17bf5a;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    div.containerGrafico {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 800px;
+    }
+}
+// &.porcentagemContainer {
+//     border-left: 1px solid #7c7c7c;
+// }
+@media screen and (min-width: 502px) {
+    section.containerFipeDadosVeiculo {
+        section.tamanhoPadrao {
+            section.containerValoresAtuais {
+                div.containerGeral {
+                    div.porcentagemContainer {
+                        border-left: 1px solid #7c7c7c;
+
+                        text-align: start;
+                    }
+                }
+            }
+        }
+    }
+}

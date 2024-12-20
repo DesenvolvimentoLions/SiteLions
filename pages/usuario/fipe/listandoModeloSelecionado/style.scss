@@ -1,0 +1,53 @@
+@use "../../../../src/assets/variaveisCss/index" as *;
+
+.containerVersoesFipe {
+    padding-inline: 1rem;
+    display: flex;
+    justify-content: center;
+
+    .tamanhoPadraoFipe {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    table.tabelaModelos {
+        th,
+        td,
+        p,
+        a {
+            text-align: start;
+            color: #fff;
+            font-size: 0.8rem;
+            text-decoration: none;
+        }
+
+        th,
+        td {
+            padding: 0.5rem;
+        }
+
+        td {
+            border: 1px solid #fff;
+            border-collapse: collapse;
+
+            button {
+                background-color: transparent;
+                border: none;
+                color: #fff;
+                font-weight: $fontBold700;
+                width: 100%;
+                display: flex;
+                cursor: pointer;
+            }
+
+            &:nth-child(2) {
+                white-space: nowrap;
+            }
+
+            &:last-child {
+                white-space: nowrap;
+            }
+        }
+    }
+}

@@ -1,0 +1,66 @@
+@use "../../../../src/assets/variaveisCss/index" as *;
+
+.demaisNoticias {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .centralizar {
+        max-width: 50rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .titulo {
+            h1 {
+                color: #fff;
+                font-weight: $fontSemiBold600;
+                font-size: 3rem;
+                text-align: center;
+                padding-bottom: 0.5rem;
+                border-bottom: 2px solid $vermelho;
+            }
+        }
+
+        .containerNoticias {
+            .listaNoticias {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                margin-top: 1rem;
+
+                li {
+                    a {
+                        color: #fff;
+                        text-decoration: none;
+
+                        h2 {
+                            font-size: 1.5rem;
+                            font-weight: $fontSemiBold600;
+                            padding-bottom: 0.5rem;
+                            line-height: 1.7rem;
+                        }
+
+                        p {
+                            line-height: 1.2rem;
+                            color: #858585;
+                        }
+                    }
+                }
+            }
+        }
+
+        button {
+            margin-top: 2rem;
+            padding: 1rem 4rem;
+            font-size: 1rem;
+            color: #fff;
+            border-radius: 0.5rem;
+            border: none;
+
+            background-color: $vermelho;
+        }
+    }
+}

@@ -1,0 +1,50 @@
+@use "../../src/assets/variaveisCss/index.scss" as *;
+
+div.busca {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #fff;
+    padding-inline: 0.4rem;
+    border-radius: $borderRadius1;
+
+    span {
+        background-color: #000;
+
+        color: #fff;
+        border: none;
+        padding: 0.4rem;
+        border-radius: $borderRadius1;
+    }
+
+    input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        padding-top: 0.7rem;
+        padding-bottom: 0.7rem;
+
+        &::placeholder {
+            font-weight: $fontBlack900;
+        }
+    }
+}
+
+button.btnPadrao {
+    background-color: #fff;
+    padding: 0.7rem;
+    border: 2px solid #fff;
+    border-radius: $borderRadius1;
+    display: flex;
+    width: 100%;
+    font-weight: $fontBlack900;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.1s;
+
+    &:hover {
+        background-color: #000;
+        color: #fff;
+    }
+}

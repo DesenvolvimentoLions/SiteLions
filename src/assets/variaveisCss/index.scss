@@ -1,0 +1,60 @@
+////////////////
+/// TAMANHOS ///
+////////////////
+$tamanhoPadraoTablets: 800px;
+$tamanhoPadraoMobile: 600px;
+
+////////////////
+/// CORES /////
+///////////////
+$vermelho: #b60a0a;
+$cinzaPlaceholder: #adadad;
+
+//////////////
+/// MIXINS ///
+//////////////
+@mixin centralizar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin alinharAoCentro {
+    display: flex;
+    justify-content: center;
+}
+
+//////////////////////
+/// BORDER RADIUS ///
+/////////////////////
+$borderRadius1: 0.313rem;
+$borderRadius2: 0.625rem;
+$borderRadius3: 0.938rem;
+$borderRadius4: 1.25rem;
+
+//////////////////
+/// FONT SIZE ///
+//////////////////
+$title1: 4rem;
+$title2: 2rem;
+$title3: 1.5rem;
+$title4: 1.25rem;
+
+$descricaoMobile: 0.875rem;
+
+///////////////////
+/// FONT WEIGHT ///
+///////////////////
+$fontThin100: 100;
+$fontExtraLight200: 200;
+$fontLight300: 300;
+$fontRegular400: 400;
+$fontMedium500: 500;
+$fontSemiBold600: 600;
+$fontBold700: 700;
+$fontExtraBold800: 800;
+$fontBlack900: 900;
+
+////////////////////
+/// PADDING ////////
+////////////////////
+$padding1: 1rem;

@@ -1,0 +1,137 @@
+@use "../../src/assets/variaveisCss/index" as *;
+
+.containerInvestidores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header {
+        background-image: url("../../src/assets/img/investidores/headerMobile.jpg");
+        height: 70vh;
+        width: 100%;
+        background-size: cover;
+        background-position: top;
+    }
+
+    .destaqueBarraNavegacao {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+        li {
+            text-align: center;
+            a {
+                text-decoration: none;
+                color: #fff;
+                font-size: 1.2rem;
+                font-weight: $fontSemiBold600;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                &:hover {
+                    color: $vermelho;
+                }
+
+                .icone {
+                    width: 5rem;
+                    height: 5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding-bottom: 1rem;
+                }
+            }
+        }
+    }
+
+    .spots {
+        background-image: url("../../src/assets/img/investidores/spots/background.jpg");
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-size: cover;
+        padding: 1rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+        h1 {
+            font-size: 2rem;
+            line-height: 2.3rem;
+            font-weight: $fontBold700;
+            margin-bottom: 1rem;
+        }
+        h5 {
+            font-size: 1.3rem;
+            line-height: 1.6rem;
+        }
+        h1,
+        h5 {
+            text-align: center;
+            color: #fff;
+        }
+
+        .listaSpots {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2rem;
+            gap: 4rem;
+
+            li {
+                width: 100%;
+                max-width: 20rem;
+                display: flex;
+                flex-direction: column;
+
+                .iconeSpot {
+                    height: 6rem;
+                    display: flex;
+
+                    svg {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+
+                h5 {
+                    font-weight: $fontBlack900;
+                    color: $vermelho;
+                    font-size: 2rem;
+                    padding-top: 1rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                p {
+                    color: #fff;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .containerInvestidores {
+        .header {
+            background-image: url("../../src/assets/img/investidores/header.jpg");
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .containerInvestidores {
+        .spots {
+            background-image: url("../../src/assets/img/investidores/spots/backgroundDesktop.jpg");
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+
+            h1 {
+                font-size: 3rem;
+                margin-bottom: 3rem;
+            }
+        }
+    }
+}

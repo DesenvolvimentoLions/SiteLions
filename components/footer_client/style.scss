@@ -1,0 +1,61 @@
+@use "../../src/assets/variaveisCss/" as *;
+
+footer.footerBottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: auto;
+    width: 100%;
+    padding-bottom: 4rem;
+    padding-top: 2rem;
+    background-color: #000;
+
+    div.socialMedia {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        section.icones {
+            display: flex;
+            gap: 1rem;
+
+            svg {
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+
+        h5 {
+            color: #fff;
+            font-size: 0.8rem;
+        }
+    }
+
+    h3 {
+        color: #fff;
+        font-size: 1.3rem;
+    }
+
+    div.menus {
+        display: flex;
+        margin-top: 1rem;
+        gap: 1rem;
+
+        a {
+            font-size: 0.8rem;
+            color: #fff;
+            text-decoration: none;
+            position: relative;
+
+            &:first-child::after {
+                content: "";
+                width: 0.15rem;
+                height: 100%;
+                position: absolute;
+                background-color: #fff;
+                right: -0.5rem;
+            }
+        }
+    }
+}

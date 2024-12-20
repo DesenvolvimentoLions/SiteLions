@@ -1,0 +1,49 @@
+@use "../../../src/assets/variaveisCss/index" as *;
+
+.tituloFipe {
+    * {
+        color: #fff;
+    }
+    h3 {
+        font-size: 1.5rem;
+        font-weight: $fontBold700;
+        span {
+            text-transform: uppercase;
+        }
+    }
+
+    p {
+        margin-top: 0.5rem;
+    }
+}
+
+// BARRA DE NAVEGACAO COM BOTAO SUPERIOR FIPE
+section.navegacaoFipe {
+    display: flex;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    * {
+        color: #fff;
+    }
+
+    button.btnVoltar {
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        left: 0;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-inline: 0.3rem;
+        cursor: pointer;
+        font-size: 1.7rem;
+    }
+
+    h5 {
+        padding: 0.3rem;
+    }
+}

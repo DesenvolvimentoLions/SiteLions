@@ -1,0 +1,110 @@
+@use "../../../src/assets/variaveisCss/index" as *;
+
+section.containerBlog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    section.tamanhoPadrao {
+        padding-inline: 1rem;
+
+        .btnVerMais {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            button {
+                background-color: $vermelho;
+                padding: 1rem 2rem;
+                border: none;
+                border-radius: $borderRadius2;
+                color: #fff;
+                font-size: 1rem;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: red;
+                }
+            }
+        }
+
+        div.containerTitulo {
+            display: flex;
+            margin-bottom: 3rem;
+            margin-top: 2rem;
+            flex-direction: column;
+            align-items: center;
+
+            h1 {
+                font-weight: $fontBold700;
+                text-transform: uppercase;
+                font-size: 4rem;
+                position: relative;
+                padding-bottom: 1rem;
+                margin-bottom: 1rem;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 30%;
+                    height: 2px;
+                    background-color: $vermelho;
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+
+            form {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                input {
+                    width: 100%;
+                    max-width: 50rem;
+                    background-color: transparent;
+                    color: #fff;
+                    text-align: center;
+                    border: none;
+                    border-bottom: 1px solid #fff;
+                    padding: 1rem;
+                    font-size: 1rem;
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+.cardMiniBlog {
+    picture {
+        img {
+            border-radius: $borderRadius3;
+        }
+    }
+}
+
+@media screen and (min-width: 834px) {
+    section.containerBlog {
+        section.tamanhoPadrao {
+            div.containerTitulo {
+                justify-content: center;
+                h1 {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    section.containerBlog {
+        section.tamanhoPadrao {
+            div.containerTitulo {
+                h1 {
+                    font-size: 6rem;
+                }
+            }
+        }
+    }
+}

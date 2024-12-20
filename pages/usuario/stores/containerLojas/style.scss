@@ -1,0 +1,65 @@
+@use "../../../../src/assets/variaveisCss/index" as *;
+section.containerLojas {
+    display: flex;
+    flex-direction: column;
+
+    h5.titulo {
+        color: #fff;
+        text-align: center;
+        font-weight: $fontSemiBold600;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+    }
+
+    section.container {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        > section.card {
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: $borderRadius2;
+            cursor: pointer;
+            max-width: 23rem;
+
+            &:hover {
+                div.containerImgLoja {
+                    img {
+                        filter: grayscale(0);
+                    }
+                }
+            }
+
+            div.containerImgLoja {
+                img {
+                    overflow: hidden;
+                    border-radius: $borderRadius2;
+                    width: 100%;
+                    filter: grayscale(1);
+                    transition: 0.5s;
+                }
+            }
+
+            div.descricaoLoja {
+                margin-top: 0.5rem;
+                h5,
+                p {
+                    text-align: center;
+                    text-transform: uppercase;
+                }
+
+                h5 {
+                    font-weight: $fontBold700;
+                    font-size: 1.2rem;
+                }
+                p {
+                    margin-top: 0.5rem;
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}

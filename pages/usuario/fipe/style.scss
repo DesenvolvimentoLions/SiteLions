@@ -1,0 +1,155 @@
+@use "../../../src/assets/variaveisCss/index.scss" as *;
+
+section.containerFipe {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-inline: 1rem;
+
+    div.titulo {
+        h3 {
+            font-size: 1.5rem;
+            color: #fff;
+            text-align: center;
+            font-weight: $fontBlack900;
+        }
+    }
+
+    section.containerBusca {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+
+        div.btnsSelects {
+            display: flex;
+            gap: 1rem;
+            width: 100%;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+
+            .btnSelect {
+                width: 100%;
+            }
+        }
+
+        div.containerSearch {
+            position: relative;
+
+            section.resultBusca {
+                background-color: #fff;
+                margin-top: 0.2rem;
+                padding: 1rem;
+                position: absolute;
+                width: 100%;
+                border-radius: $borderRadius1;
+                max-height: 50vh;
+                overflow-y: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                div.container {
+                    div.tituloBusca {
+                        h3 {
+                            font-weight: $fontBold700;
+                        }
+                    }
+                    div.veiculos {
+                        h4 {
+                            font-weight: $fontMedium500;
+                            text-decoration: underline;
+                            padding-left: 1rem;
+                            position: relative;
+                            margin-top: 1rem;
+
+                            &::after {
+                                content: "";
+                                background-image: url("../../../assets/img/icons/search/arrowEnter.svg");
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 1rem;
+                                height: 100%;
+                                transform: rotateZ(-180deg) rotateX(180deg);
+                            }
+                        }
+
+                        ul {
+                            margin-left: 1.5rem;
+
+                            li {
+                                margin-right: 1.5rem;
+
+                                button {
+                                    background-color: transparent;
+                                    border: none;
+                                    border-bottom: 1px solid #7c7c7c;
+
+                                    text-align: start;
+                                    cursor: pointer;
+                                    padding: 0.8rem;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+///////////////////////////////
+/// ESTILIZACAO DA LISTAGEM ///
+///////////////////////////////
+section.listagemFipe {
+    display: flex;
+    justify-content: center;
+    padding-inline: 1rem;
+    width: 100%;
+
+    section.tamanhoPadraoFipe {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    section.global {
+        width: 100%;
+        ul {
+            display: flex;
+            flex-direction: column;
+
+            li {
+                width: 100%;
+
+                button {
+                    padding-top: 1rem;
+                    padding-bottom: 1rem;
+                    width: 100%;
+                    text-align: start;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 1px solid #7c7c7c;
+                    color: #fff;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+//PAGINA PARA MOSTRAR OS VEICULOS
+section.fipeContainerVeiculo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 1rem;
+
+    div.tituloLista {
+        color: #fff;
+        font-weight: $fontBold700;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}

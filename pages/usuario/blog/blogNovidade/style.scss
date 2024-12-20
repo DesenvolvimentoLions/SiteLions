@@ -1,0 +1,98 @@
+@use "../../../../src/assets/variaveisCss/index" as *;
+
+section.componenteNovidade {
+    margin-top: 5rem;
+
+    section.containerTitulo {
+        padding-bottom: 1rem;
+        h2 {
+            color: #fff;
+            font-weight: $fontBold700;
+            color: $vermelho;
+            font-size: 1.2rem;
+        }
+    }
+    section.containerGeral {
+        display: grid;
+        grid-template-areas:
+            "p"
+            "s1"
+            "s2"
+            "s3"
+            "s4"
+            "s5";
+        gap: 2rem;
+
+        .containerBLog {
+            width: 100%;
+            text-decoration: none;
+
+            &:hover .titulo {
+                color: #c0c0c0;
+            }
+
+            picture {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        div.titulo {
+            color: #fff;
+            font-weight: $fontMedium500;
+            line-height: 1.3rem;
+
+            &.principal {
+                font-size: 1.3rem;
+                font-weight: $fontBold700;
+            }
+        }
+
+        a.contianer1 {
+            grid-area: s1;
+        }
+        a.container2 {
+            grid-area: s2;
+        }
+        a.container3 {
+            grid-area: s3;
+        }
+        a.container4 {
+            grid-area: s4;
+        }
+        a.container5 {
+            grid-area: p;
+        }
+    }
+}
+
+@media screen and (min-width: 834px) {
+    section.componenteNovidade {
+        section.containerGeral {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "p p"
+                "s1 s2"
+                "s3 s4";
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    section.componenteNovidade {
+        section.containerGeral {
+            grid-template-columns: 300px 300px repeat(4, 1fr);
+            grid-template-areas:
+                "s1 s2 p p p p"
+                "s3 s4 p p p p";
+        }
+
+        &.reverse section.containerGeral {
+            grid-template-columns: repeat(4, 1fr) 300px 300px;
+            grid-template-areas:
+                " p p p p s1 s2"
+                " p p p p s3 s4";
+        }
+    }
+}

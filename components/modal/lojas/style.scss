@@ -1,0 +1,407 @@
+@use "../../../src/assets/variaveisCss/index" as *;
+
+body.active {
+    overflow-y: hidden;
+}
+
+section.modalPadraoLojas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 101;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+
+    &.active {
+        visibility: visible;
+
+        section.background {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    &.inactive {
+        // visibility: hidden;
+
+        section.background {
+            transition: all 0.5s 1s ease-in-out;
+        }
+    }
+
+    section.background {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding-inline: 2rem;
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        section.modalContent {
+            position: relative;
+
+            section.containerItensModal {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1rem;
+                max-width: 30rem;
+
+                section.conteudo {
+                    position: relative;
+                    z-index: 1;
+                }
+                &.active {
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        background-color: #fff;
+                        height: 75px;
+                        width: 75px;
+                        border-radius: 75px;
+                        overflow: hidden;
+                        animation: openBond 0.5s linear forwards;
+                    }
+                }
+                &.inactive {
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        background-color: #fff;
+                        height: 100%;
+                        width: 100%;
+                        border-radius: $borderRadius3;
+                        overflow: hidden;
+                        animation: closeBond 0.5s 0.5s linear forwards;
+                    }
+                }
+
+                button.close {
+                    position: absolute;
+                    top: -2.5rem;
+                    border: 1px solid #fff;
+                    color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    right: 0;
+                    z-index: 3;
+                    background-color: #000;
+                    width: 2rem;
+                    height: 2rem;
+                    border-radius: 2rem;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@keyframes openBond {
+    0% {
+        transform: translateY(100vh);
+    }
+    80% {
+        transform: translateY(0px);
+        border-radius: 75px;
+        height: 75px;
+        width: 75px;
+    }
+    90% {
+        border-radius: $borderRadius3;
+        height: 120%;
+        width: 120%;
+    }
+    100% {
+        border-radius: $borderRadius3;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@keyframes closeBond {
+    0% {
+        border-radius: $borderRadius3;
+        height: 100%;
+        width: 100%;
+    }
+    10% {
+        border-radius: $borderRadius3;
+        height: 80%;
+        width: 80%;
+    }
+    20% {
+        border-radius: $borderRadius3;
+        height: 100%;
+        width: 100%;
+    }
+    50% {
+        transform: translateY(0px);
+        border-radius: 75px;
+        height: 75px;
+        width: 75px;
+    }
+    100% {
+        transform: translateY(100vh);
+        border-radius: 75px;
+        height: 75px;
+        width: 75px;
+    }
+}
+
+///////////////////
+///////////////////
+/// MODAIS BLOG ///
+///////////////////
+///////////////////
+// MODAL SELECAO DE AREA //
+
+section.modalPadraoBlog {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    z-index: 101;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    transition: 0.2s;
+    opacity: 0;
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+
+        .container {
+            margin-top: initial;
+        }
+    }
+
+    .container {
+        background-color: #fff;
+        padding: 1rem;
+        padding-top: 1.5rem;
+        border-radius: $borderRadius2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        margin-top: 10rem;
+        transition: 0.3s;
+
+        label {
+            font-weight: $fontSemiBold600;
+            position: relative;
+            width: 100%;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -0.5rem;
+                width: 3rem;
+                background-color: $vermelho;
+                height: 0.2rem;
+                left: 0;
+                border-radius: 1rem;
+            }
+
+            select {
+                margin-left: 0.5rem;
+                background-color: $vermelho;
+                border: none;
+                padding: 0.5rem;
+                border-radius: $borderRadius2;
+                color: #fff;
+            }
+        }
+
+        // SELECAO DE GRID
+        .gridSelecao {
+            display: grid;
+            grid-template-areas:
+                "a b c"
+                "d e c";
+            gap: 1rem;
+            margin-top: 1rem;
+
+            button {
+                min-height: 5rem;
+                width: 5rem;
+                cursor: pointer;
+                border-radius: $borderRadius2;
+                border: 2px solid $vermelho;
+                background-color: #fff;
+                font-size: 2rem;
+                color: $vermelho;
+                transition: 0.2s;
+
+                &:hover {
+                    background-color: $vermelho;
+                    color: #fff;
+                }
+
+                &.active {
+                    background-color: $vermelho;
+                    color: #fff;
+                }
+            }
+
+            // SE FOR A GRID DO CABECALHO
+            &.cabecalho {
+                grid-template-areas:
+                    "c d"
+                    "e d";
+
+                button {
+                    width: 10rem;
+                }
+
+                .column3 {
+                    width: 10rem;
+                }
+                .column4 {
+                    width: 15rem;
+                }
+            }
+            // SE FOR A GRID INVERTIDA
+            &.reverse {
+                grid-template-areas:
+                    "a b c"
+                    "a d e";
+                .column1 {
+                    width: 10rem;
+                }
+                .column3 {
+                    width: 5rem;
+                }
+            }
+
+            .column1 {
+                grid-area: a;
+            }
+            .column2 {
+                grid-area: b;
+            }
+            .column3 {
+                grid-area: c;
+                width: 10rem;
+            }
+            .column4 {
+                grid-area: d;
+            }
+            .column5 {
+                grid-area: e;
+            }
+        }
+
+        button[type="submit"] {
+            margin-top: 1rem;
+            padding-inline: 1rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: $borderRadius2;
+            border: none;
+            font-weight: 600;
+            background-color: $vermelho;
+            color: #fff;
+            cursor: pointer;
+
+            &:hover {
+                background-color: red;
+            }
+        }
+
+        .close {
+            position: absolute;
+            top: -1rem;
+            width: 2rem;
+            height: 2rem;
+            right: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            background-color: $vermelho;
+            border-radius: 1rem;
+            color: #fff;
+            cursor: pointer;
+
+            &:hover {
+                background-color: red;
+            }
+        }
+    }
+}
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+
+.modalPadraoBlog {
+    .container {
+        .gridSecoes {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+
+            div {
+                background-color: transparent;
+                border: none;
+                border-radius: $borderRadius2;
+                border: 2px solid $vermelho;
+                cursor: pointer;
+                font-size: 1.5rem;
+                color: $vermelho;
+                font-weight: $fontSemiBold600;
+                transition: 0.2s all ease-in-out;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                position: relative;
+                overflow: hidden;
+
+                img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                input {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    cursor: pointer;
+                    z-index: 1;
+                }
+
+                &:hover {
+                    background-color: $vermelho;
+                    color: #fff;
+                }
+
+                &:first-child {
+                    width: 25rem;
+                    height: 16.638rem;
+                }
+                &:last-child {
+                    width: 15rem;
+                    height: 10rem;
+                }
+            }
+        }
+    }
+}

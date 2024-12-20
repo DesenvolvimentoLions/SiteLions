@@ -1,0 +1,101 @@
+@use "../../../../src/assets/variaveisCss/" as *;
+
+section.gridContainerHeader {
+    margin-top: 1rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-areas:
+        "p"
+        "t"
+        "s1"
+        "s2";
+    a {
+        text-decoration: none;
+
+        &:hover .titulo {
+            color: #c0c0c0;
+        }
+    }
+
+    a.containerBLog {
+        img {
+            width: 100%;
+        }
+    }
+
+    a.container1 {
+        grid-area: s1;
+    }
+    a.container2 {
+        grid-area: s2;
+    }
+    a.container3 {
+        grid-area: p;
+
+        .titulo {
+            font-size: 1.3rem;
+            font-weight: $fontBold700;
+        }
+
+        picture {
+            img {
+                border-radius: $borderRadius3;
+            }
+        }
+    }
+    section.container4 {
+        grid-area: t;
+    }
+
+    // LISTAGEM
+    section.listaPrincipalNoticia {
+        .lista {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+    }
+
+    .tituloPrincipalNoticia {
+        font-weight: $fontBold700;
+        text-transform: uppercase;
+        color: $vermelho;
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+    }
+    .categoria {
+        color: $vermelho;
+        font-weight: $fontBold700;
+        margin-bottom: 0.2rem;
+    }
+    .titulo {
+        color: #fff;
+        line-height: 1.3rem;
+        font-weight: $fontMedium500;
+    }
+}
+
+@media screen and (min-width: 834px) {
+    section.gridContainerHeader {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        grid-template-areas:
+            "p p"
+            "s1 t"
+            "s2 t";
+        grid-template-rows: auto 1fr auto;
+
+        a.container3 {
+            grid-area: p;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    section.gridContainerHeader {
+        grid-template-columns: 300px repeat(4, 1fr);
+        grid-template-areas:
+            "s1 p p p t"
+            "s2 p p p t";
+    }
+}

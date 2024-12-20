@@ -1,0 +1,40 @@
+@use "../../src/assets/variaveisCss/index" as *;
+
+.navBar.investidores {
+    .containerNav {
+        .containerMenu {
+            .navegacao {
+                ul {
+                    padding-inline: 1rem;
+                    li {
+                        a {
+                            font-weight: 400 !important;
+                        }
+                    }
+                    li:last-child {
+                        background-color: #fff;
+                        border-radius: $borderRadius2;
+
+                        a {
+                            color: #000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .navBar.investidores {
+        .containerNav {
+            .containerMenu {
+                .navegacao {
+                    ul {
+                        gap: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}

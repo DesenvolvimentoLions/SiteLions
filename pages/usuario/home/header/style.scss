@@ -1,0 +1,69 @@
+@use "../../../../src/assets/variaveisCss/index" as *;
+
+header.headerBody {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    z-index: 20;
+
+    section.descricao {
+        padding-inline: $padding1;
+        margin-top: auto;
+        margin-bottom: 5rem;
+        width: 100%;
+        max-width: 800px;
+
+        h1 {
+            color: #fff;
+            font-size: $title3;
+            font-weight: $fontExtraBold800;
+            line-height: 2rem;
+        }
+        p {
+            // font-size: 14px;
+            color: #fff;
+            line-height: 1.3rem;
+            font-weight: $fontLight300;
+        }
+        div.btnSaibaMais {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            margin-top: 1rem;
+
+            > a {
+                background-color: #fff;
+                border-radius: $borderRadius2;
+                padding: 1rem;
+                padding-inline: 4rem;
+                font-size: $title4;
+                font-weight: $fontBlack900;
+                color: #000;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 800px) {
+    header.headerBody {
+        section.descricao {
+            margin-bottom: 1rem;
+            h1 {
+                font-size: $title1;
+                line-height: 4.5rem;
+                max-width: 800px;
+            }
+            p {
+                max-width: 800px;
+            }
+
+            div.btnSaibaMais {
+                justify-content: start;
+            }
+        }
+    }
+}

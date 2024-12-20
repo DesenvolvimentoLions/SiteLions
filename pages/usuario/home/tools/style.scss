@@ -1,0 +1,47 @@
+@use "../../../../src/assets/variaveisCss/index" as *;
+
+div.titulosCard {
+    text-align: center;
+    h4 {
+        color: #fff;
+        font-size: $title4;
+        font-weight: $fontBlack900;
+    }
+}
+
+div.containerFerramentas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+
+    a.clienteIconeBody {
+        text-decoration: none;
+        color: #fff;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        transition: 0.2s ease-in-out;
+
+        span {
+            width: 4.125rem;
+
+            svg {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        p {
+            font-weight: $fontBold700;
+            font-size: $descricaoMobile;
+            margin-top: auto;
+        }
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}

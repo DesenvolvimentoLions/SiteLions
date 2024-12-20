@@ -1,0 +1,112 @@
+@use "../../../../src/assets/variaveisCss/index" as *;
+
+section.globalMarcas {
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    section.containerMarcas {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        div.tituloContainer {
+            margin-bottom: 1rem;
+            text-align: center;
+            h3 {
+                font-weight: $fontBlack900;
+                color: #fff;
+                font-size: 0.8rem;
+                text-transform: uppercase;
+            }
+        }
+
+        div.containerFlex {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            div.marcas {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+
+                > button.linkMarcas {
+                    transition: 0.2s ease-in-out;
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+
+                    width: 25%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0.5rem;
+
+                    div.icone {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    &:hover {
+                        transform: scale(1.2);
+                    }
+                }
+            }
+
+            a.verMais {
+                color: #fff;
+                text-decoration: none;
+                text-align: center;
+                margin-top: 2rem;
+                font-size: 0.7rem;
+                padding: 1rem;
+                padding-inline: 2rem;
+                border: 2px solid #fff;
+                border-radius: $borderRadius1;
+                transition: 0.2s;
+                font-weight: $fontBold700;
+
+                &:hover {
+                    border: 2px solid $vermelho;
+                    background-color: $vermelho;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    section.globalMarcas {
+        section.containerMarcas {
+            div.containerFlex {
+                flex-direction: row;
+
+                div.marcas {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+                    width: 100%;
+                    max-width: 70%;
+
+                    > button.linkMarcas {
+                        width: 100%;
+                    }
+
+                    &.tamanhoMaximo {
+                        max-width: 100% !important;
+                    }
+                }
+
+                a.verMais {
+                    margin: 0;
+                    margin-left: 2rem;
+                }
+            }
+        }
+    }
+}
