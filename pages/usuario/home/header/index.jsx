@@ -7,8 +7,12 @@ import HeaderDesktop from "../../../../src/assets/img/banner/bannerDesktop.webp"
 const { innerWidth: width } = window;
 
 import "./style.min.css";
+import useHookHeaderHomePage from "./hook";
 
 export default function HomeHeader(props) {
+    const { data } = useHookHeaderHomePage();
+    console.log(data);
+
     const [imgHeader, setImgHeader] = useState(null);
 
     useEffect(() => {
